@@ -23,12 +23,14 @@ describe("Auth", () => {
     const response = await request(app).post("/auth/register").send({
       nome: "Teste",
       email: "teste@email.com",
-      senha: "123456"
+      senha: "123456",
+      role: "ADMIN"
     });
 
     expect(response.status).toBe(201);
     expect(response.body.token).toBeDefined();
     expect(response.body.usuario.email).toBe("teste@email.com");
+    expect(response.body.usuario.role).toBe("USER");
     expect(response.body.usuario.senhaHash).toBeUndefined();
   });
 
@@ -91,4 +93,3 @@ describe("Auth", () => {
     expect(response.status).toBe(401);
   });
 });
-

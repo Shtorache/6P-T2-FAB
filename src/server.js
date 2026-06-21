@@ -2,10 +2,12 @@ const app = require("./app");
 const env = require("./config/env");
 const prisma = require("./config/prisma");
 const { connectMongo } = require("./config/mongo");
+const { seedDatabase } = require("./seed");
 
 async function start() {
   await prisma.$connect();
   await connectMongo();
+  await seedDatabase();
 
   app.listen(env.port, () => {
     console.log(`API executando na porta ${env.port}`);

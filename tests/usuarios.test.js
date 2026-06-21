@@ -29,6 +29,37 @@ afterAll(async () => {
 });
 
 describe("Usuarios", () => {
+  test("cria usuario como admin", async () => {
+    const response = await request(app)
+      .post("/usuarios")
+      .set("Authorization", `Bearer ${adminToken}`)
+      .send({
+        nome: "Novo Usuario",
+        email: "novo@email.com",
+        senha: "123456",
+        role: "ADMIN"
+      });
+
+    expect(response.status).toBe(201);
+    expect(response.body.email).toBe("novo@email.com");
+    expect(response.body.role).toBe("ADMIN");
+    expect(response.body.senhaHash).toBeUndefined();
+  });
+
+  test("bloqueia criacao para usuario comum", async () => {
+    const response = await request(app)
+      .post("/usuarios")
+      .set("Authorization", `Bearer ${userToken}`)
+      .send({
+        nome: "Sem Permissao",
+        email: "sempermissao@email.com",
+        senha: "123456",
+        role: "USER"
+      });
+
+    expect(response.status).toBe(403);
+  });
+
   test("lista usuarios como admin", async () => {
     const response = await request(app)
       .get("/usuarios")
@@ -90,4 +121,3 @@ describe("Usuarios", () => {
     expect(response.status).toBe(400);
   });
 });
-

@@ -84,10 +84,27 @@ npm test
 
 ### Usuarios
 
+- `POST /usuarios`
 - `GET /usuarios`
 - `GET /usuarios/:id`
 - `PUT /usuarios/:id`
 - `DELETE /usuarios/:id`
+
+`POST /usuarios`, `GET /usuarios` e `DELETE /usuarios/:id` exigem usuario com role `ADMIN`.
+
+## Seed de dados
+
+Ao iniciar pelo Docker, a API cria dados iniciais caso as colecoes/tabelas estejam vazias. Tambem e possivel reaplicar manualmente:
+
+```bash
+npm run seed
+```
+
+Usuario administrador de exemplo:
+
+```text
+admin@p2.local / senha123
+```
 
 ### Carros
 
@@ -142,4 +159,3 @@ Essa arquitetura foi escolhida por ser simples, organizada, facil de testar e ad
 ## Relatorio de verificacao
 
 Foi gerado um arquivo `verification-report.json` com os resultados brutos das verificações automatizadas e manuais (registro, login, CRUDs e checagens de autorizacao). O arquivo está incluído no repositório para conferência do Fabrício grande mestre.
-

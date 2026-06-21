@@ -18,7 +18,7 @@ function signToken(usuario) {
 }
 
 async function register(data) {
-  const usuario = await createUsuario(data);
+  const usuario = await createUsuario({ ...data, role: "USER" });
   const token = signToken(usuario);
   return { usuario, token };
 }
@@ -47,4 +47,3 @@ module.exports = {
   register,
   login
 };
-

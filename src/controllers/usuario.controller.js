@@ -5,6 +5,11 @@ async function list(req, res) {
   res.json(usuarios);
 }
 
+async function create(req, res) {
+  const usuario = await usuarioService.createUsuario(req.validated.body);
+  res.status(201).json(usuario);
+}
+
 async function getById(req, res) {
   const usuario = await usuarioService.getUsuarioById(req.validated.params.id);
   res.json(usuario);
@@ -25,8 +30,8 @@ async function remove(req, res) {
 
 module.exports = {
   list,
+  create,
   getById,
   update,
   remove
 };
-

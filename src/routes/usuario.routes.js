@@ -4,6 +4,7 @@ const validate = require("../middlewares/validate.middleware");
 const { authenticate, authorize } = require("../middlewares/auth.middleware");
 const {
   usuarioIdSchema,
+  registerSchema,
   updateUsuarioSchema
 } = require("../schemas/usuario.schema");
 const asyncHandler = require("../utils/asyncHandler");
@@ -12,6 +13,7 @@ const router = express.Router();
 
 router.use(authenticate);
 
+router.post("/", authorize("ADMIN"), validate(registerSchema), asyncHandler(usuarioController.create));
 router.get("/", authorize("ADMIN"), asyncHandler(usuarioController.list));
 router.get("/:id", validate(usuarioIdSchema), asyncHandler(usuarioController.getById));
 router.put("/:id", validate(updateUsuarioSchema), asyncHandler(usuarioController.update));
@@ -23,4 +25,3 @@ router.delete(
 );
 
 module.exports = router;
-

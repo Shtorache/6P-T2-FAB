@@ -32,11 +32,29 @@ const swaggerSpec = swaggerJsdoc({
             senha: { type: "string", example: "123456" }
           }
         },
+        RegistroPublico: {
+          type: "object",
+          required: ["nome", "email", "senha"],
+          properties: {
+            nome: { type: "string", example: "Usuario" },
+            email: { type: "string", example: "usuario@email.com" },
+            senha: { type: "string", example: "123456" }
+          }
+        },
         RegistroUsuario: {
           type: "object",
           required: ["nome", "email", "senha"],
           properties: {
             nome: { type: "string", example: "Admin" },
+            email: { type: "string", example: "admin@email.com" },
+            senha: { type: "string", example: "123456" },
+            role: { type: "string", enum: ["USER", "ADMIN"], example: "ADMIN" }
+          }
+        },
+        AtualizaUsuario: {
+          type: "object",
+          properties: {
+            nome: { type: "string", example: "Admin Atualizado" },
             email: { type: "string", example: "admin@email.com" },
             senha: { type: "string", example: "123456" },
             role: { type: "string", enum: ["USER", "ADMIN"], example: "ADMIN" }
@@ -99,7 +117,7 @@ const swaggerSpec = swaggerJsdoc({
             required: true,
             content: {
               "application/json": {
-                schema: { $ref: "#/components/schemas/RegistroUsuario" }
+                schema: { $ref: "#/components/schemas/RegistroPublico" }
               }
             }
           },
@@ -135,8 +153,10 @@ const crudPaths = {
   usuarios: {
     base: "/usuarios",
     schema: "Usuario",
+    createSchema: "RegistroUsuario",
+    updateSchema: "AtualizaUsuario",
     protected: true,
-    create: false
+    create: true
   },
   carros: {
     base: "/carros",
@@ -175,7 +195,7 @@ Object.values(crudPaths).forEach((resource) => {
         required: true,
         content: {
           "application/json": {
-            schema: { $ref: `#/components/schemas/${resource.schema}` }
+            schema: { $ref: `#/components/schemas/${resource.createSchema || resource.schema}` }
           }
         }
       },
@@ -198,7 +218,7 @@ Object.values(crudPaths).forEach((resource) => {
         required: true,
         content: {
           "application/json": {
-            schema: { $ref: `#/components/schemas/${resource.schema}` }
+            schema: { $ref: `#/components/schemas/${resource.updateSchema || resource.schema}` }
           }
         }
       },
@@ -222,4 +242,3 @@ module.exports = {
   setupSwagger,
   swaggerSpec
 };
-
