@@ -1,6 +1,6 @@
 # API T2 - Node.js, Express, PostgreSQL e MongoDB
 
-API backend desenvolvida para o trabalho T2, contemplando dois contextos de persistencia, autenticacao JWT, seguranca, testes de integracao, Swagger e conteinerizacao.
+API backend desenvolvida para o Trabalho T2, contemplando dois contextos de persistência, autenticação JWT, segurança, testes de integração, Swagger e conteinerização.
 
 ## Tecnologias
 
@@ -23,7 +23,7 @@ API backend desenvolvida para o trabalho T2, contemplando dois contextos de pers
 
 ## Arquitetura
 
-A aplicacao foi dividida em camadas:
+A aplicação foi dividida em camadas:
 
 - `routes`: definem os endpoints HTTP.
 - `controllers`: recebem requisicoes e retornam respostas.
@@ -138,4 +138,8 @@ A documentacao automatica da API foi gerada com Swagger, facilitando a visualiza
 A aplicacao foi conteinerizada com Docker, usando docker-compose para orquestrar a API, o PostgreSQL e o MongoDB.
 O fluxo principal de execucao do projeto acontece via Docker, conforme exigido, sem depender de npm run dev ou npm start para a entrega.
 Essa arquitetura foi escolhida por ser simples, organizada, facil de testar e adequada aos requisitos de seguranca, persistencia e documentacao do trabalho.
+
+## Relatorio de verificacao
+
+Foi gerado um arquivo `verification-report.json` com os resultados brutos das verificações automatizadas e manuais (registro, login, CRUDs e checagens de autorizacao). O arquivo está incluído no repositório para conferência do Fabrício grande mestre.
 

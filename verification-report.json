@@ -1,0 +1,412 @@
+[
+  {
+    "step": "register validator"
+  },
+  {
+    "action": "register validator",
+    "r": {
+      "status": 201,
+      "body": {
+        "usuario": {
+          "id": 212,
+          "nome": "validator",
+          "email": "validator+2026@example.com",
+          "role": "USER",
+          "createdAt": "2026-06-21T15:49:31.722Z",
+          "updatedAt": "2026-06-21T15:49:31.722Z"
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEyLCJlbWFpbCI6InZhbGlkYXRvcisyMDI2QGV4YW1wbGUuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE3ODIwNTY5NzEsImV4cCI6MTc4MjA2MDU3MX0.1rw0GNQMAFRIjrPxxXnkR-h6krMvLJS82kxrbdWGSh0"
+      }
+    }
+  },
+  {
+    "step": "login validator"
+  },
+  {
+    "action": "login validator",
+    "r": {
+      "status": 200,
+      "body": {
+        "usuario": {
+          "id": 212,
+          "nome": "validator",
+          "email": "validator+2026@example.com",
+          "role": "USER",
+          "createdAt": "2026-06-21T15:49:31.722Z",
+          "updatedAt": "2026-06-21T15:49:31.722Z"
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEyLCJlbWFpbCI6InZhbGlkYXRvcisyMDI2QGV4YW1wbGUuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE3ODIwNTY5NzEsImV4cCI6MTc4MjA2MDU3MX0.1rw0GNQMAFRIjrPxxXnkR-h6krMvLJS82kxrbdWGSh0"
+      }
+    }
+  },
+  {
+    "step": "register admin attempt"
+  },
+  {
+    "action": "register admin attempt",
+    "r": {
+      "status": 201,
+      "body": {
+        "usuario": {
+          "id": 213,
+          "nome": "adminTry",
+          "email": "adminTry+2026@example.com",
+          "role": "ADMIN",
+          "createdAt": "2026-06-21T15:49:32.079Z",
+          "updatedAt": "2026-06-21T15:49:32.079Z"
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEzLCJlbWFpbCI6ImFkbWluVHJ5KzIwMjZAZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODIwNTY5NzIsImV4cCI6MTc4MjA2MDU3Mn0.p68pzT6wBOMHWNVyB-8ZwG3qIqaDU6DdzynCY9ssam8"
+      }
+    }
+  },
+  {
+    "step": "testing /carros"
+  },
+  {
+    "action": "create",
+    "r": {
+      "status": 201,
+      "body": {
+        "marca": "TestMarca",
+        "modelo": "T1",
+        "ano": 2020,
+        "cor": "Azul",
+        "preco": 10000,
+        "_id": "6a38080c0e609e1b41912a05",
+        "createdAt": "2026-06-21T15:49:32.104Z",
+        "updatedAt": "2026-06-21T15:49:32.104Z",
+        "__v": 0
+      }
+    }
+  },
+  {
+    "action": "list",
+    "list": {
+      "status": 200,
+      "body": [
+        {
+          "_id": "6a38080c0e609e1b41912a05",
+          "marca": "TestMarca",
+          "modelo": "T1",
+          "ano": 2020,
+          "cor": "Azul",
+          "preco": 10000,
+          "createdAt": "2026-06-21T15:49:32.104Z",
+          "updatedAt": "2026-06-21T15:49:32.104Z",
+          "__v": 0
+        }
+      ]
+    }
+  },
+  {
+    "action": "get",
+    "get": {
+      "status": 200,
+      "body": {
+        "_id": "6a38080c0e609e1b41912a05",
+        "marca": "TestMarca",
+        "modelo": "T1",
+        "ano": 2020,
+        "cor": "Azul",
+        "preco": 10000,
+        "createdAt": "2026-06-21T15:49:32.104Z",
+        "updatedAt": "2026-06-21T15:49:32.104Z",
+        "__v": 0
+      }
+    }
+  },
+  {
+    "action": "update",
+    "update": {
+      "status": 200,
+      "body": {
+        "_id": "6a38080c0e609e1b41912a05",
+        "marca": "TestMarca",
+        "modelo": "T1",
+        "ano": 2020,
+        "cor": "Alterado",
+        "preco": 10000,
+        "createdAt": "2026-06-21T15:49:32.104Z",
+        "updatedAt": "2026-06-21T15:49:32.171Z",
+        "__v": 0
+      }
+    }
+  },
+  {
+    "action": "delete",
+    "del": {
+      "status": 204,
+      "body": ""
+    }
+  },
+  {
+    "step": "testing /motos"
+  },
+  {
+    "action": "create",
+    "r": {
+      "status": 201,
+      "body": {
+        "marca": "Yamaha",
+        "modelo": "M1",
+        "cilindradas": 600,
+        "ano": 2019,
+        "preco": 8000,
+        "_id": "6a38080c0e609e1b41912a06",
+        "createdAt": "2026-06-21T15:49:32.216Z",
+        "updatedAt": "2026-06-21T15:49:32.216Z",
+        "__v": 0
+      }
+    }
+  },
+  {
+    "action": "list",
+    "list": {
+      "status": 200,
+      "body": [
+        {
+          "_id": "6a38080c0e609e1b41912a06",
+          "marca": "Yamaha",
+          "modelo": "M1",
+          "cilindradas": 600,
+          "ano": 2019,
+          "preco": 8000,
+          "createdAt": "2026-06-21T15:49:32.216Z",
+          "updatedAt": "2026-06-21T15:49:32.216Z",
+          "__v": 0
+        }
+      ]
+    }
+  },
+  {
+    "action": "get",
+    "get": {
+      "status": 200,
+      "body": {
+        "_id": "6a38080c0e609e1b41912a06",
+        "marca": "Yamaha",
+        "modelo": "M1",
+        "cilindradas": 600,
+        "ano": 2019,
+        "preco": 8000,
+        "createdAt": "2026-06-21T15:49:32.216Z",
+        "updatedAt": "2026-06-21T15:49:32.216Z",
+        "__v": 0
+      }
+    }
+  },
+  {
+    "action": "update",
+    "update": {
+      "status": 400,
+      "body": {
+        "message": "Dados invalidos",
+        "errors": [
+          {
+            "path": "body",
+            "message": "Informe ao menos um campo para atualizacao"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "action": "delete",
+    "del": {
+      "status": 204,
+      "body": ""
+    }
+  },
+  {
+    "step": "testing /marcas-roupa"
+  },
+  {
+    "action": "create",
+    "r": {
+      "status": 201,
+      "body": {
+        "nome": "BrandX",
+        "paisOrigem": "BR",
+        "categoria": "casual",
+        "anoFundacao": 1990,
+        "_id": "6a38080c0e609e1b41912a07",
+        "createdAt": "2026-06-21T15:49:32.269Z",
+        "updatedAt": "2026-06-21T15:49:32.269Z",
+        "__v": 0
+      }
+    }
+  },
+  {
+    "action": "list",
+    "list": {
+      "status": 200,
+      "body": [
+        {
+          "_id": "6a38080c0e609e1b41912a07",
+          "nome": "BrandX",
+          "paisOrigem": "BR",
+          "categoria": "casual",
+          "anoFundacao": 1990,
+          "createdAt": "2026-06-21T15:49:32.269Z",
+          "updatedAt": "2026-06-21T15:49:32.269Z",
+          "__v": 0
+        }
+      ]
+    }
+  },
+  {
+    "action": "get",
+    "get": {
+      "status": 200,
+      "body": {
+        "_id": "6a38080c0e609e1b41912a07",
+        "nome": "BrandX",
+        "paisOrigem": "BR",
+        "categoria": "casual",
+        "anoFundacao": 1990,
+        "createdAt": "2026-06-21T15:49:32.269Z",
+        "updatedAt": "2026-06-21T15:49:32.269Z",
+        "__v": 0
+      }
+    }
+  },
+  {
+    "action": "update",
+    "update": {
+      "status": 200,
+      "body": {
+        "_id": "6a38080c0e609e1b41912a07",
+        "nome": "Alterado",
+        "paisOrigem": "BR",
+        "categoria": "casual",
+        "anoFundacao": 1990,
+        "createdAt": "2026-06-21T15:49:32.269Z",
+        "updatedAt": "2026-06-21T15:49:32.296Z",
+        "__v": 0
+      }
+    }
+  },
+  {
+    "action": "delete",
+    "del": {
+      "status": 204,
+      "body": ""
+    }
+  },
+  {
+    "step": "usuarios checks"
+  },
+  {
+    "action": "GET /usuarios",
+    "usuariosList": {
+      "status": 403,
+      "body": {
+        "message": "Acesso negado"
+      }
+    }
+  },
+  {
+    "action": "GET /usuarios/212",
+    "getU": {
+      "status": 200,
+      "body": {
+        "id": 212,
+        "nome": "validator",
+        "email": "validator+2026@example.com",
+        "role": "USER",
+        "createdAt": "2026-06-21T15:49:31.722Z",
+        "updatedAt": "2026-06-21T15:49:31.722Z"
+      }
+    }
+  },
+  {
+    "action": "PUT /usuarios/:id",
+    "updU": {
+      "status": 200,
+      "body": {
+        "id": 212,
+        "nome": "validator-updated",
+        "email": "validator+2026@example.com",
+        "role": "USER",
+        "createdAt": "2026-06-21T15:49:31.722Z",
+        "updatedAt": "2026-06-21T15:49:32.336Z"
+      }
+    }
+  },
+  {
+    "action": "DELETE /usuarios/:id (as user)",
+    "delU": {
+      "status": 403,
+      "body": {
+        "message": "Acesso negado"
+      }
+    }
+  },
+  {
+    "step": "admin actions"
+  },
+  {
+    "action": "login adminTry",
+    "lg": {
+      "status": 200,
+      "body": {
+        "usuario": {
+          "id": 213,
+          "nome": "adminTry",
+          "email": "adminTry+2026@example.com",
+          "role": "ADMIN",
+          "createdAt": "2026-06-21T15:49:32.079Z",
+          "updatedAt": "2026-06-21T15:49:32.079Z"
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEzLCJlbWFpbCI6ImFkbWluVHJ5KzIwMjZAZXhhbXBsZS5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODIwNTY5NzIsImV4cCI6MTc4MjA2MDU3Mn0.p68pzT6wBOMHWNVyB-8ZwG3qIqaDU6DdzynCY9ssam8"
+      }
+    }
+  },
+  {
+    "action": "GET /usuarios as admin",
+    "adminList": {
+      "status": 200,
+      "body": [
+        {
+          "id": 210,
+          "nome": "Usuario USER",
+          "email": "user-1782053980739-0.899931146914509@email.com",
+          "role": "USER",
+          "createdAt": "2026-06-21T14:59:40.819Z",
+          "updatedAt": "2026-06-21T14:59:40.819Z"
+        },
+        {
+          "id": 211,
+          "nome": "ci_test_user",
+          "email": "ci_test_user+2026@example.com",
+          "role": "USER",
+          "createdAt": "2026-06-21T15:04:02.302Z",
+          "updatedAt": "2026-06-21T15:04:02.302Z"
+        },
+        {
+          "id": 212,
+          "nome": "validator-updated",
+          "email": "validator+2026@example.com",
+          "role": "USER",
+          "createdAt": "2026-06-21T15:49:31.722Z",
+          "updatedAt": "2026-06-21T15:49:32.336Z"
+        },
+        {
+          "id": 213,
+          "nome": "adminTry",
+          "email": "adminTry+2026@example.com",
+          "role": "ADMIN",
+          "createdAt": "2026-06-21T15:49:32.079Z",
+          "updatedAt": "2026-06-21T15:49:32.079Z"
+        }
+      ]
+    }
+  },
+  {
+    "action": "DELETE userA as admin",
+    "delUser": {
+      "status": 204,
+      "body": ""
+    }
+  }
+]
