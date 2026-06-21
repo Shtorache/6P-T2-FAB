@@ -1022,14 +1022,5 @@ Antes de considerar pronto:
 - Os testes devem cobrir todos os recursos exigidos no enunciado.
 - O link do GitHub deve estar publico.
 
-## 20. Observacoes finais
 
-- A prioridade e cumprir integralmente o enunciado.
-- Evitar funcionalidades extras que aumentem o risco de erro.
-- Manter o codigo simples, legivel e dividido por responsabilidade.
-- Sempre que uma etapa for concluida, atualizar este arquivo informando:
-  - o que foi feito;
-  - como foi feito;
-  - quais arquivos foram criados ou alterados;
-  - qual e a proxima etapa.
 
